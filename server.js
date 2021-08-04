@@ -2,6 +2,7 @@ const fs = require("fs");
 const http = require("http");
 const url = require("url");
 const slugify = require("slugify");
+const port = process.env.PORT || 8080;
 
 const replaceTemplate = require("./modules/replaceTemplate.js");
 
@@ -105,6 +106,6 @@ const server = http.createServer((req, res) => {
   }
 });
 
-server.listen(8080, "127.0.0.1", () => {
-  console.log("Listening to request on port 8080");
+server.listen(port, "127.0.0.1", () => {
+  console.log(`Listening to request on port ${port}`);
 });
